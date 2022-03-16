@@ -13,12 +13,13 @@ Additionally, the (optional) pipeline for hyperparameter optimization uses:
 
 ## Dataset
 
-The dataset can be download from TODO. Explain dataset.
-Alternatively:
+The dataset can be downloaded by running:
 
 ```
 get_data.sh
 ```
+
+Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=4f5b2172-f6e3-4d3d-bd8a-1ffda8ee4d16) and paste the files in folder ```/exp/data```.
 
 ## Setup hyperparameter optimization pipeline
 
