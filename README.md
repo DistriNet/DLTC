@@ -24,8 +24,6 @@ Alternatively, download from [here](https://filesender.belnet.be/?s=download&tok
 ## Setup hyperparameter optimization pipeline
 
 ```bash
-git clone TODO
-git checkout hyperopt
 pip3 install -r ray-tuning/requirements.txt
 ```
 
