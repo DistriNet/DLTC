@@ -1,0 +1,47 @@
+data:
+    dataset_path: data/
+    flow_size: 300
+    pickle_path: data/tc_S_flowlen-100.pkl
+    h5_path: data/tc_S_flowlen-100_neg-49_cv-5.h5
+    folds: 5          # k in k-fold cross-validation
+    n_fold: 0         # current test fold to evaluate
+    n_neg_per_pos: 49 # number of unpaired flows generated from each paired flows
+    ratio_train: 0.8  # proportion of dataset for training
+    crossval_indices_path: data/tc_S_flowlen-100_neg-49_cv-5_indices.pkl
+    log_path:
+        tf: log_tc_S_neg-49
+    seed: ~
+train:
+    mode: train
+    patience: 10
+    batch_size: 32 # 64
+    conv_filters:
+    - !!python/tuple [64, !!python/tuple [2, 30]]
+    - !!python/tuple [128, !!python/tuple [4, 10]]
+    
+    strides:
+    - !!python/tuple [2, 1]
+    - !!python/tuple [4, 1]
+    
+    max_pool_sizes:
+    - 5
+    - 5
+    
+    dense_layers:
+    - 500
+    - 100
+    - 1
+    
+    drop_p: 0.6
+    lr: 0.0001 
+    weighted_loss: true
+    pos_weight: 5
+    train_best: train_best_tc_S_fold
+    train_last: train_last_tc_S_fold
+    best_aux: train_best_aux_tc_S_fold.pkl
+    last_aux: train_last_aux_tc_S_fold.pkl
+    epochs: 100
+test:
+    batch_size: 256
+    
+FLAG_DEBUG: false

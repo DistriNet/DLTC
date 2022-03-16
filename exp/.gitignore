@@ -1,0 +1,5 @@
+exp/ray_exp/*
+*.pyc
+.DS_Store
+exp/data/*.h5
+exp/data/*.pkl
