@@ -1,0 +1,4 @@
+FROM rayproject/ray:8823ca-py38-gpu
+RUN pip3 install tensorboard
+EXPOSE 6006
+CMD tensorboard --logdir /app/exp/ray_exp/ --port 6006 --bind_all

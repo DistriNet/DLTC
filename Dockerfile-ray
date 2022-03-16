@@ -1,0 +1,15 @@
+FROM rayproject/ray:8823ca-py38-gpu
+
+RUN sudo apt-get update
+RUN sudo apt-get install -y git
+RUN pip3 install tensorflow==2.3.1 ax-platform ray[tune]
+COPY ray-tuning /app
+# RUN pip3 install -r /app/requirements.txt
+
+ARG user_id=501
+ARG user_group=20
+ENV gpu=0
+ENV config_file=sample_conf.yml
+
+USER $user_id:$user_group
+CMD ray start --head && python3 /app/main.py /app/exp/conf/$config_file --gpu=$gpu --preprocess=True

@@ -1,0 +1,143 @@
+exp:
+    exp_name: SampleHyperParamOptExp
+    exp_path: '/app/exp/ray_exp/'
+    optim_metric: 'val/av_prec'
+    sched_grace_period: 7
+    num_samples: 24
+    epochs: 50
+    num_repeat: 1
+data:
+    dataset_path: /app/exp/data/tc_S_flowlen-100.pkl
+    flow_size: 300
+    pickle_path: /app/exp/data/tc_S_flowlen-100.pkl
+    h5_path: /app/exp/data/tc_S_flowlen-100_neg-49_cv-5.h5
+    n_neg_per_pos: 49 # number of unpaired flows generated from each paired flows
+    ratio_train: 0.8 # proportion of dataset for training
+    n_fold: 1
+    crossval_indices_path: /app/exp/data/tc_S_flowlen-100_neg-49_cv-5_indices.pkl
+    log_path:
+        tf: log_tc_S_neg-49_tune
+    seed: 0
+train:
+    batch_size: 256
+    conv_filters:
+    # - 2000
+    # - 800
+    - 64
+    - 16
+    dense_layers:
+    # - 3000
+    # - 800
+    # - 100
+    # - 1
+    - 128
+    - 32
+    - 8
+    - 1
+    drop_p: 0.6 # 0.6
+    lr: 0.0001
+    train_best: train_best1
+    train_last: train_last1
+    best_aux: train_best_aux1.pkl
+    last_aux: train_last_aux1.pkl
+test:
+    batch_size: 256
+
+hyperopt:
+-   name: lr
+    type: choice
+    values: [0.001, 0.0001]
+
+-   name: batch_size
+    type: choice
+    values: [32,64,128]
+
+-   name: drop_p
+    type: fixed
+    value: 0.6
+
+-   name: pos_weight
+    type: choice
+    values: [1,5]
+
+-   name: dense_layers_choice
+    type: choice
+    # index of hyperopt utils
+    values: [0,1,2]
+
+-   name: conv_layers_choice
+    type: choice
+    # index of hyperopt utils
+    values: [0,1,2]
+  
+hyperopt_utils:
+-   name: conv_layers
+    values: 
+    - [64, 128]
+    - [128, 128]
+    - [64, 64]
+    # - [128, 64, 32]
+
+    # - [300,100]
+    # original
+    # - [2000, 800]
+    # - [2000, 800]
+    # x 1.5 capacity
+    # - [4000, 1000]
+    # x 2 capacity?
+    # - [1000, 800, 500]
+    # x 3 capacity?
+    # - [1000, 800, 500, 200]
+
+-   name: dense_layers
+    values: 
+    - [500,100]
+    - [1000,100]
+    - [1000,500,100]
+    # - [500,100]
+
+-   name: max_pool_sizes
+    type: choice
+    values: 
+    - [5,5]
+    - [5,5]
+    - [5,5]
+    # - [5,5,5]
+
+
+-   name: kernel_sizes
+    type: choice
+    values:
+    - 
+        - !!python/tuple [2, 30]
+        - !!python/tuple [4, 10]              
+    # - 
+    #     - !!python/tuple [2, 30]
+    #     - !!python/tuple [4, 10]    
+    #     - !!python/tuple [4, 5]    
+    - 
+        - !!python/tuple [2, 30]
+        - !!python/tuple [4, 10]  
+    # - 
+    - 
+        - !!python/tuple [2, 30]
+        - !!python/tuple [4, 10]  
+    # - 
+    #     - !!python/tuple [2, 30]
+    #     - !!python/tuple [4, 10]
+    #     - !!python/tuple [3, 10]    
+    
+            
+-   name: strides
+    type: choice
+    values: 
+    - [2,4] 
+    # - [2,4,4] 
+    - [2,4]
+    - [2,4]
+    # - [2,4,1] 
+ 
+
+
+FLAG_DEBUG: false
+  

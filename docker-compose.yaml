@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  ray-exp:
+    build: 
+      context: .
+      dockerfile: Dockerfile-ray
+      args:
+        gpu: 0
+        user_id: 501
+        group_id: 20
+    mem_reservation: 10G
+    volumes:
+      - ./exp:/app/exp
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
+  tensorboard:
+    build: 
+      context: .
+      dockerfile: Dockerfile-tensorboard
+    depends_on:
+      - ray-exp
+    volumes:
+      - ./exp:/app/exp
+    ports:
+      - "6016:6006"
+
