@@ -3,3 +3,5 @@ exp/ray_exp/*
 .DS_Store
 exp/data/*.h5
 exp/data/*.pkl
+exp/data/*tar
+exp/results/*pkl
