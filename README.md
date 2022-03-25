@@ -19,7 +19,7 @@ The dataset can be downloaded by running:
 get_data.sh
 ```
 
-Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=57b4bc25-bde4-4fd1-be15-bf0a6e4ee797) and paste the tar files in folder ```/exp/data``` and the pkl files in folder ```/exp/results```.
+Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=57b4bc25-bde4-4fd1-be15-bf0a6e4ee797), unzip the data files in folder ```/exp/data``` and the resultes files in folder ```/exp/results```.
 
 ## Main experiments
 
