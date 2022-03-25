@@ -19,7 +19,7 @@ The dataset can be downloaded by running:
 get_data.sh
 ```
 
-Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=4f5b2172-f6e3-4d3d-bd8a-1ffda8ee4d16) and paste the files in folder ```/exp/data```.
+Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=57b4bc25-bde4-4fd1-be15-bf0a6e4ee7976) and paste the tar files in folder ```/exp/data```.
 
 ## Setup hyperparameter optimization pipeline
 
