@@ -19,7 +19,7 @@ The dataset can be downloaded by running:
 get_data.sh
 ```
 
-Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=4f5b2172-f6e3-4d3d-bd8a-1ffda8ee4d16) and paste the files in folder ```/exp/data```.
+Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=57b4bc25-bde4-4fd1-be15-bf0a6e4ee797) and paste the tar files in folder ```/exp/data``` and the pkl files in folder ```/exp/results```.
 
 ## Main experiments
 
@@ -54,7 +54,7 @@ config-8k-S.yml # model configuration for single-proxy data
 
 As a result, multiple keras models (for each cross-validation fold and seed) will be created in a folder with path provided under ```log_path``` in each config file. These are the trained DeepCorr models for single- and multi-proxy datasets.
 
-Next, the notebook generates test datasets with $`N * N`$ traffic traces for every fold and evaluates every trained model. Model predictions and ground truth labels are then saved in files in directory ```results/```.
+Next, the notebook generates test datasets with N * N traffic traces for every fold and evaluates every trained model. Model predictions and ground truth labels are then saved in files in directory ```results/```.
 
 ## Test, calculate metrics and plot results
 
