@@ -3,8 +3,8 @@ exp:
     exp_path: '/app/exp/ray_exp/'
     optim_metric: 'val/av_prec'
     sched_grace_period: 7
-    num_samples: 24
-    epochs: 50
+    num_samples: 2
+    epochs: 2
     num_repeat: 1
 data:
     dataset_path: /app/exp/data/tc_S_flowlen-100.pkl
