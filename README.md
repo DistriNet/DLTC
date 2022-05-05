@@ -39,7 +39,11 @@ This requires [Docker](https://docs.docker.com/engine/install/). First, ensure y
 
 ```bash
 docker build -t tor-notebook .
-docker run --rm -it  -p 8888:8888/tcp tor-notebook
+
+docker run --rm -it \
+--mount src="$(pwd)"/exp/data,target=/app/exp/data,type=bind \
+-p 8888:8888/tcp \
+tor-notebook
 ```
 The Jupyter Notebooks can be now accessed in the browser on ```127.0.0.1:8888```.
 
