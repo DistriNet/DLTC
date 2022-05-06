@@ -32,7 +32,7 @@ Start a ray cluster. For a distributed setting, instructions on how to create a 
 ```bash
 ray start --head
 
-# To stop the ray process
+# To stop the ray process after the experiments are finished
 ray stop
 ```
 
