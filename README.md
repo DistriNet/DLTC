@@ -31,6 +31,9 @@ Start a ray cluster. For a distributed setting, instructions on how to create a 
 
 ```bash
 ray start --head
+
+# To stop the ray process
+ray stop
 ```
 
 ## Define and run hyperopt experiments
