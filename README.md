@@ -36,6 +36,12 @@ ray start --head
 ray stop
 ```
 
+## Configurations files
+
+We provide two configuration files: a sample file ```sample_conf.yml``` for a reduced tuning experiment, and a complete file ```tdc_conf.yml``` for a full hyperparameter tuning procedure. The sample config can be used for the artifact evaluation, in order to verify that the code and the Ray framework are functional. The reduced experiment only performs 2 training runs 2 epochs each. On one GPU this takes under 15 minutes, depending on hardware (we used NVIDIA GeForce 2080 RTX). On a CPU with 4 cores, this will take longer.
+
+The complete config is one of those used for hyperparameter tuning in the paper, and is now included for completeness and for potential replication of the tuning results of the optimized TDC model in Section 6 of the paper. On one GPU (NVIDIA GeForce 2080 RTX) this takes approximately 24 hours. We have not tested this config on a CPU, it might take several days or even longer.
+
 ## Define and run hyperopt experiments
 
 ```bash
