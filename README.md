@@ -13,7 +13,7 @@ Additionally, the (optional) pipeline for hyperparameter optimization uses:
 
 ## Dataset
 
-The dataset can be downloaded by running:
+The dataset can be downloaded by running a dedicated script in folder ```/exp/data```:
 
 ```
 get_data.sh
