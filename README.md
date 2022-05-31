@@ -19,7 +19,7 @@ The dataset (15Gb) can be downloaded by running a dedicated script in folder ```
 get_data.sh
 ```
 
-Alternatively, download from [here](https://filesender.belnet.be/?s=download&token=57b4bc25-bde4-4fd1-be15-bf0a6e4ee7976) and unzip the data files in folder ```/exp/data```.
+Alternatively, download from [here](https://filesender.belnet.be/download.php?token=56b46a01-7d0b-4dfe-b939-ab406b77bd45&files_ids=1190979%2C1190980) and unzip the data files in folder ```/exp/data```.
 
 ## Setup hyperparameter optimization pipeline
 
