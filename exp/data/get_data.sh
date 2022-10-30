@@ -1,4 +1,4 @@
 #!/bin/bash
 
-curl 'https://filesender.belnet.be/download.php?token=56b46a01-7d0b-4dfe-b939-ab406b77bd45&files_ids=1190979%2C1190980' --output all_data.tar
+curl 'https://filesender.belnet.be/download.php?token=7da0daea-1e5d-4004-953f-8884d2b976f7&files_ids=1461558' --output all_data.tar
 tar -xvf all_data.tar
